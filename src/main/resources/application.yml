@@ -1,0 +1,42 @@
+# 数据库配置
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  # email 配置
+  mail:
+    host: smtp.163.com
+    username: jiangtdemail@163.com
+    from: 子十<jiangtdemail@163.com>
+    password: VHYBYJJPFDEUOWCG
+    protocol: smtp
+    port: 465
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          starttls:
+            enable: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.131.130:3306/read?serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&rewriteBatchedStatements=true
+    username: mysql3
+    password: 123
+
+# MP 配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.zs.shanhe.entity
+
+
+
+
+
